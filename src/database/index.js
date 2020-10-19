@@ -2,9 +2,10 @@ const Sequelize = require("sequelize");
 
 const databaseConfig = require("../config/database");
 
-const Endereco = require('../app/models/Endereco');
+const Endereco = require("../app/models/Endereco");
+const Usuario = require("../app/models/Usuario");
 
-const models = [Endereco];
+const models = [Endereco, Usuario];
 
 class Database {
   constructor() {
@@ -17,7 +18,7 @@ class Database {
     models
       .map((model) => model.init(this.connection))
       .map(
-        (model) => model.associate && model.associate(this.connection.model)
+        (model) => model.associate && model.associate(this.connection.models)
       );
   }
 }
