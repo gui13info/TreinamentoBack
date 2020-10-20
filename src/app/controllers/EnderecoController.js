@@ -60,6 +60,14 @@ class EnderecoController {
 
     return res.status(200).json(Uendereco);
   }
+  
+  async destroy(req, res){
+    const { id } = req.params;
+    
+    const endereco = await Endereco.findByIdAndRemove(id);
+    
+    return res.send();
+  }
 }
 
 module.exports = new EnderecoController();
