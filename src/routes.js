@@ -14,6 +14,7 @@ routes.get("/", InfoController.index);
 routes.post("/enderecos", EnderecoController.store);
 routes.get("/enderecos/:id", EnderecoController.show);
 routes.put("/enderecos/:id", EnderecoController.update);
+routes.delete("/enderecos/:id", EnderecoController.destroy);
 
 routes.post("/usuarios", UsuarioController.store);
 routes.get("/usuarios/:id", UsuarioController.show);
